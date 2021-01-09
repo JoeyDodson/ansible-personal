@@ -4,6 +4,17 @@
   become: true
 
   tasks:
-  - name: install htop
+  - name: install packages
     package: 
-      name: htop
+      name: 
+        - htop
+        - sudo
+        - tmux
+        - vim
+        - tldr
+        - git
+        - nmap
+        - rsync
+        - tree
+
+        
