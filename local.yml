@@ -20,14 +20,21 @@
         - python3
         - python3-pip
   
-  - name: ansible-personal service and timer file creation
-    copy: src=files/{{ item }} dest=/etc/systemd/user/
+  - name: ansible-personal service file creation
+    copy: 
+      src: files/ansible-personal.service
+      dest: /etc/systemd/user/ansible-personal.service
       owner: root
       group: root
       mode: 0440
-    with_items:
-    - ansible-personal.service
-    - ansible-personal.timer
+
+  - name: ansible-personal timer file creation
+    copy: 
+      src: files/ansible-personal.timer
+      dest: /etc/systemd/user/ansible-personal.timer
+      owner: root
+      group: root
+      mode: 0440
 
   - name: enable and unmask ansible-personal service
     systemd:
