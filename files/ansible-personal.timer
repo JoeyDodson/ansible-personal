@@ -1,0 +1,10 @@
+[Unit]
+Description=ansible-personal job timer
+
+[Timer]
+OnBootSec=0min
+OnUnitActiveSec=15m
+Unit=ansible-personal.service
+
+[Install]
+WantedBy=multi-user.target

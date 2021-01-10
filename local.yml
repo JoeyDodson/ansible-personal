@@ -11,10 +11,26 @@
         - sudo
         - tmux
         - vim
+        - apropos
         - tldr
         - git
         - nmap
         - rsync
         - tree
+        - python3
+        - python3-pip
+  
+  - name: ansible-personal service and timer file creation
+    copy: src=files/{{ item }} dest=/etc/systemd/user/
+      owner: root
+      group: root
+      mode: 0440
+    with_items:
+    - ansible-personal.service
+    - ansible-personal.timer
 
-        
+  - name: enable and unmask ansible-personal service
+    systemd:
+      name: ansible-personal.timer
+      enabled: yes
+      masked: no

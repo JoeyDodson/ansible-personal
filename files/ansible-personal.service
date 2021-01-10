@@ -1,0 +1,5 @@
+[Unit]
+Description=Run ansbile-pull to fetch any recent changes from Github repo
+
+[Service]
+ExecStart=ansible-pull -o -U https://github.com/JoeyDodson/ansible-personal.git
