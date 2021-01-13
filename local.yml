@@ -22,7 +22,7 @@
   
   - name: ansible-personal service file creation
     copy: 
-      src: files/ansible-personal.service
+      src: ~/dev/ansible-personal/files/ansible-personal.service
       dest: /etc/systemd/user/ansible-personal.service
       owner: root
       group: root
@@ -30,7 +30,7 @@
 
   - name: ansible-personal timer file creation
     copy: 
-      src: files/ansible-personal.timer
+      src: ~/dev/ansible-personal/files/ansible-personal.timer
       dest: /etc/systemd/user/ansible-personal.timer
       owner: root
       group: root
